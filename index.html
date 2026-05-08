@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonte cyberpunk --> <!-- 🔹 IMPORTAÇÃO DE FONTES E ÍCONES -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Cyber System</title>
+    <link rel="icon" type="image/png" href="images/icone2-site.png">
+
+    <!-- Biblioteca de ícones Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <!-- 🔹 CABEÇALHO / MENU DE NAVEGAÇÃO -->
+    <header>
+        <!-- Relógio digital atualizado em tempo real via JavaScript -->
+        <div id="clock"></div>
+        <h2>Cyber System</h2>
+
+        <!-- Navegação interna entre seções do site -->
+        <nav>
+            <a href="#inicio">INÍCIO</a>
+            <a href="#sobre">SOBRE</a>
+            <a href="#funcionalidade">FUNÇÕES</a>
+            <a href="#contato">CONTATO</a>
+        </nav>
+    </header>
+
+    <!-- 🔹 TELA PRINCIPAL / TERMINAL CYBERPUNK -->
+    <section id="inicio">
+        <button class="startBtn">INICIAR INVASÃO</button>
+    <div class="container">
+        <h1>ACCESS GRANTED</h1>
+        <p></p>
+    </div>
+
+    <!-- Área onde os textos simulando invasão são digitados -->
+    <div class="terminal">
+        <p class="terminal-text"></p>
+    </div>
+
+    <!-- Barra de carregamento sincronizada com os textos do terminal -->
+    <div class="loading-bar">
+        <div class="loading-fill"></div>
+        <span class="loading-text">0%</span>
+    </div>
+    </section>
+
+    <!-- 🔹 Seção explicando objetivo do projeto -->
+    <section id="sobre">
+        <h2>Sobre o sistema</h2>
+        <p>Este projeto simula uma interface inspirada em sistemas cyberpunk, explorando conceitos de desenvolvimento Front-End com HTML, CSS e JavaScript.</p>
+        <p>A proposta combina design futurista, animações HUD, efeitos neon e interações dinâmicas para transformar estudos de programação em uma experiência visual imersiva.</p>
+    </section>
+
+    <!-- Cards com funcionalidades fictícias do sistema -->
+    <section id="funcionalidade">
+        <h2>Funcionalidades</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-terminal"></i>
+                <h3>Quebra de senha</h3>
+                <p>Sistema de descriptografia neural.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <h3>Rastreamento</h3>
+                <p>Monitoramento em tempo real.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Acesso remoto</h3>
+                <p>Conexão criptografada segura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 Formulário visual de contato -->
+    <section id="contato">
+    <h2>Contato</h2>
+    <div class="contact-form">
+        <input type="text" id="nome" placeholder="Seu nome">
+        <input type="email" id="email" placeholder="Seu Gmail">
+        <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+        <button class="btn enviarBtn">
+            Enviar
+        </button>
+    </div>
+
+</section>
+
+    <!-- Logo identidade criativa posicionada no final do site -->
+    <div class="logo-final">
+        <img src="images/icone2-site.png" alt="Logo Cyber System">
+    </div>
+
+    <!-- 🔹 Rodapé com informações do desenvolvedor -->
+    <footer>
+    <div class="footer-box">
+        <h3>Operadores do Sistema</h3>
+        <p>Alyson Souto</p>
+        <div class="social-links">
+            <a href="https://github.com/Alyson-021" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/alyson-souto-739039314/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,534 @@
+/* 🔹 Variáveis globais de cores do projeto */
+:root{
+    --bg-color: #0a0f14;
+    --primary: #00e5ff;
+    --secundary: #ff3b3b;
+    --text: #d9d9d9;
+    --panel: #101820;
+}
+
+/* Fonte Orbitron importada do Google Fonts.
+Escolhida por possuir aparência futurista,
+combinando com a identidade visual cyberpunk do projeto. */
+/* 🔹 Estilo base do site */
+body{    
+    /* background-image:
+    linear-gradient(rgba(10,15,20,0.1),
+    rgba(10,15,20,0.7)),
+    url("../images/background-cyberpunk.jpg");
+    background-size: contain;
+    background-position: center; */
+
+
+    background-color: #0a0f14;
+    color: #d9d9d9;
+    font-family: 'Orbitron', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 🔹 Fundo neon com efeito glow cyberpunk */
+.background-glow{
+    position: fixed;
+    inset: 0;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,229,255,0.15) 0%,
+        rgba(10,15,20,0.85) 70%
+    ),
+    url("../images/background-cyberpunk.jpg");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: blur(2px);
+
+    z-index: -2;
+}
+
+.container{
+    text-align: center;
+    margin-top: 20%;
+}
+
+h1{
+    color: var(--primary);
+    text-shadow:
+    0 0 3px var(--primary),
+    0 0 6px var(--primary);
+}
+
+h1{
+    position: relative;
+    animation: glitch 3s infinite;
+}
+
+/* 🔹 Animação de distorção estilo glitch */
+@keyframes glitch{
+    0%{transform: translate(0);}
+    20%{transform: translate(-2px, 2px);}
+    40%{transform: translate(-2px, -2px);}
+    60%{transform: translate(2px, 2px);}
+    80%{transform: translate(2px, -2px);}
+    100%{transform: translate(0);}
+    
+    /* 0% { left: 0;}
+    20% { left: -2px; }
+    40% { left: 2px; }
+    60% { left: -2px; }
+    80% { left: 2px; }
+    100% { left: 0; } */
+}
+
+/* 🔹 Linhas simulando monitor CRT antigo */
+body::after{
+    content:"";
+    position: fixed;
+    inset: 0;
+
+    background: 
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,0,0,0.10),
+        rgba(255,0,0,0.10) 1px,
+        transparent 1px,
+        transparent 3px
+        );
+
+        mix-blend-mode: screen;
+        pointer-events: none;
+        z-index: 5;
+        animation: crtMove 3s infinite;
+
+
+
+    /* width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,0,0,0.50),
+        rgba(255,0,0,0.50) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events:none; */
+}
+
+@keyframes crtMove{
+    0% {transform: translate(0);}
+    50% {transform: translate(1px);}
+    100% {transform: translate(0);}
+}
+
+body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,0.02),
+        rgba(0,0,0,0.08)
+    );
+
+    pointer-events:none;
+
+    z-index: 4;
+}
+
+/* 🔹 Botão principal de ativação do sistema */
+.startBtn {
+    background-color: black;
+    color:red;
+    border: 1px solid red;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-shadow: 0 0 5px red;
+}
+
+.startBtn:hover{
+    animation: glitch 0.3s infinite;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Botão "Seu Nome" */
+input:focus{
+    outline: none;
+    border: 2px solid red;
+    box-shadow: 0 0 10px red;
+    border-radius: 7px;
+}
+
+/* Efeito "Piscando" parecendo digitação no terminal após os textos <h2> */
+h2::after{
+    content: " ▋";
+    color: red;
+    animation: piscar 1.5s infinite;
+}
+
+@keyframes piscar{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+section{
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+
+    background: rgba(16, 24, 32, 0.7);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    box-shadow: 
+    0 0 10px rgba(0, 229, 255, 0.3);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+section:hover{
+    transform: scale(1.02);
+}
+
+/* 🔹 Estilização da interface do terminal */
+.terminal{
+    width: 80%;
+    max-width: 700px;
+
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--primary);
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 
+    0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.terminal-text{
+    color: var(--primary);
+}
+
+.terminal-text::after{
+    content: "_";
+    animation: piscar 1s infinite;
+}
+
+/* 🔹 Menu de navegação superior */
+nav{
+    display: flex;
+    gap: 30px;
+
+    margin-top: 15px;
+}
+
+nav a{
+    color: var(--primary);
+    /* Tirar linha do texto sublinhado */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    /* Trasnformar o texto ao passar o mouse em outra cor e estilo neon */
+    color: red;
+    text-shadow: 
+    0 0 10px red;
+}
+
+/* 🔹 Cards de funcionalidades do sistema */
+.cards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    width: 220px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--primary);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 
+    0 0 15px var(--primary);
+}
+
+.card i{
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Pseudo-classe exigida - alteração em somente 1 card especifico */
+/* Destaca visualmente o card central */
+.card:nth-child(2){
+    border-color: red;
+}
+
+/* 🔹 Barra de carregamento dinâmica controlada via JavaScript */
+.loading-bar{
+    position: relative;
+    width: 300px;
+    height: 22px;
+    border: 1px solid red;
+    margin: 20px auto;
+    overflow: hidden;
+    background: rgba(0,0,0,0.7);
+    box-shadow:
+    0 0 10px red;
+
+    /* Mudança de uma barra estática em loop pra algo funcional */
+    /* width: 300px;
+    height: 20px;
+
+    border: 1px solid red;
+    margin-top: 20px;
+    overflow:hidden;
+
+    box-shadow:
+    0 0 10px red; */
+}
+
+/* Estilo Gradiente na barra de carregamento, deixando em um estilo excepcional */
+.loading-fill{
+    width: 0%;
+    height: 100%;
+    background:
+    linear-gradient(
+        90deg,
+        red,
+        orange,
+        red
+    );
+    transition: width 0.1s linear;
+    box-shadow:
+    0 0 15px red;
+
+    /* Mudança de uma barra estática em loop pra algo funcional */
+    /* width: 70%;
+    height: 100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        red,
+        orange,
+        red
+    );
+
+    animation: loading 3s infinite; */
+}
+
+.loading-text{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 0.8rem;
+
+    text-shadow:
+    0 0 5px red;
+}
+
+/* GLITCH DA BARRA */
+/* 🔹 Efeito visual aplicado quando o carregamento chega a 100% */
+.loading-complete{
+    animation: glitchBar 0.3s infinite;
+}
+
+@keyframes glitchBar{
+
+    0%{
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+
+    20%{
+        transform: translate(-2px, 1px);
+    }
+
+    40%{
+        transform: translate(2px, -1px);
+    }
+
+    60%{
+        transform: translate(-1px, 2px);
+    }
+
+    80%{
+        transform: translate(1px, -2px);
+    }
+
+    100%{
+        transform: translate(0);
+        filter: hue-rotate(20deg);
+    }
+}
+
+/* Animação de carregamento em loop sem função */
+/* @keyframes loading{
+    0% {width: 0%;}
+    100% {width: 100%;}
+} */
+
+/* 🔹 Posicionamento do relógio digital */
+header{
+    position: relative;
+    padding: 20px 40px;
+}
+
+#clock{
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    color: red;
+
+    font-size: 0.9rem;
+
+    text-shadow:
+    0 0 5px red;
+}
+
+/* Refinando visual e adicionando identidade com a logo no final do site */
+.logo-final{
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+.logo-final img{
+    width: 160px;
+    opacity: 1;
+    filter:
+    drop-shadow(0 0 10px red);
+    transition: 0.3s;
+}
+
+.logo-final img:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* 🔹 Estilização do formulário de contato */
+.contact-form{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    background: rgba(0,0,0,0.7);
+    border: 1px solid var(--primary);
+    color: white;
+    padding: 12px;
+    font-family: 'Orbitron', monospace;
+    border-radius: 5px;
+}
+
+/* Textarea/Mensagem do usuário maior */
+.contact-form textarea{
+    height: 120px;
+    resize: none;
+}
+
+/* Estilização do botão de enviar do usuário */
+.enviarBtn{
+    background: black;
+
+    color: red;
+
+    border: 1px solid red;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.enviarBtn:hover{
+    box-shadow:
+    0 0 15px red;
+
+    transform: scale(1.03);
+}
+
+/* 🔹 Rodapé com redes sociais do operador */
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.footer-box{
+    background: rgba(0,0,0,0.7);
+    border: 1px solid var(--primary);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow:
+    0 0 15px rgba(0,229,255,0.3);
+}
+
+/* Nome do Operador */
+.footer-box p{
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+/* Organização de Ícones */
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a{
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover{
+    color: red;
+    transform: scale(1.2);
+    text-shadow:
+    0 0 10px red;
+}
