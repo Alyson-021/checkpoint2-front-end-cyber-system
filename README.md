@@ -39,7 +39,29 @@ Desenvolver uma interface interativa utilizando HTML, CSS e JavaScript, aplicand
 
 ## 🖼️ Preview
 
-Adicione aqui screenshots do projeto.
+### 🖥️ Tela Inicial
+
+Tela principal inspirada em interfaces HUD cyberpunk com animações neon e efeito glitch.
+
+<img src="screenshots/home.png" width="700">
+
+### 💻 Sistema de Terminal
+
+Terminal dinâmico desenvolvido com JavaScript, exibindo mensagens sincronizadas com a barra de carregamento.
+
+<img src="screenshots/terminal.png" width="700">
+
+### 📡 Funcionalidades do Sistema
+
+Cards interativos utilizando Flexbox, efeitos hover e pseudo-classes CSS.
+
+<img src="screenshots/cards.png" width="700">
+
+### 👤 Operadores do Sistema
+
+Footer personalizado contendo redes sociais e identidade visual do projeto.
+
+<img src="screenshots/footer.png" width="700">
 
 ---
 
